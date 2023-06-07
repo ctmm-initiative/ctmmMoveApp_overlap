@@ -11,6 +11,6 @@ rFunction = function(data) {
   
   capture.output(res, file = appArtifactPath("overlap_summary.txt"))
   
-  return(ov)
+  return(list(data, ov))
   
 }
