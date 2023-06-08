@@ -2,7 +2,7 @@ library(ctmm)
 
 rFunction = function(data) {
   
-  ov <- overlap(data) 
+  ov <- overlap(data[[2]]) 
   
   res <- apply(ov$CI, 1:2, function(x) {
     x <- format(round(x, 2), nsmall = 2)
@@ -11,6 +11,6 @@ rFunction = function(data) {
   
   capture.output(res, file = appArtifactPath("overlap_summary.txt"))
   
-  return(list(data, ov))
+  return(data)
   
 }
